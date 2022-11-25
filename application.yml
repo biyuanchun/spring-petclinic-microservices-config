@@ -78,12 +78,15 @@ spring:
   config:
     activate:
       on-profile: mysql
-    schema: classpath*:db/mysql/schema.sql
-    data: classpath*:db/mysql/data.sql
-    url: jdbc:mysql://172.0.0.1:3306/petclinic?useSSL=false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.106.95.151:3306/petclinic?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=utf8
     username: root
     password: 123456
-    initialization-mode: never
+    initialization-mode: always
+    schema: classpath*:db/mysql/schema.sql
+    data: classpath*:db/mysql/data.sql
+
 
 
 ---
